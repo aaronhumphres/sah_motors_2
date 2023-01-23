@@ -4,15 +4,16 @@ const mongoose = require('./connection')
 // import user model for populate
 const User = require('./user')
 
+
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
 
-const exampleSchema = new Schema(
+const vehicleSchema = new Schema(
 	{
-		title: { type: String, required: true },
-		body: { type: String, required: true },
-        amount: { type: Number, required: true },
-		ready: { type: Boolean, required: true },
+		Brand: { type: String, required: true },
+		Model: { type: String, required: true },
+        Color: { type: Number, required: true },
+		favorite: { type: Boolean, required: true },
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',
@@ -21,9 +22,9 @@ const exampleSchema = new Schema(
 	{ timestamps: true }
 )
 
-const Example = model('Example', exampleSchema)
+const Vehicle = model('Vehicle', vehicleSchema)
 
 /////////////////////////////////
 // Export our Model
 /////////////////////////////////
-module.exports = Example
+module.exports = vehicle
