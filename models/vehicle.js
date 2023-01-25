@@ -1,4 +1,4 @@
-const mongoose = require('./connection')
+const mongoose = require('../utils/connection')
 
 
 // import user model for populate
@@ -9,10 +9,10 @@ const { Schema, model } = mongoose
 
 const vehicleSchema = new Schema(
 	{
-		title: { type: String, required: true },
-		body: { type: String, required: true },
-        amount: { type: Number, required: true },
-		ready: { type: Boolean, required: true },
+		year: { type: String, required: true },
+		make: { type: String, required: true },
+        model: { type: Number, required: true },
+		favorite: { type: Boolean, required: true },
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',

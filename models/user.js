@@ -1,5 +1,8 @@
 // import what I need
-const { Schema, model } = require('./connection.js')
+const { Schema, model } = require('../utils/connection.js')
+
+//destructer the Schema and model functions from mongoose
+//const {Schema, model } = mongoose
 
 // create the schema
 const UserSchema = new Schema(
