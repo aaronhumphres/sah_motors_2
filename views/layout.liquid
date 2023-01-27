@@ -13,28 +13,28 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               <div class="container">
-                <a class="navbar-brand" href="#">SAH MOTORS</a>
+                <a class="navbar-brand" href="/">SAH MOTORS</a>
                 <button
                   class="navbar-toggler"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
                   aria-expanded="false"
                   aria-label="Toggle navigation"
                 >
                   <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <a href="/vehicles/new" class="nav-link text-light me-3">create vehicle</a>
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link text-light" aria-current="page" href="/vehicles">All Vehicles</a>
                     </li>
                     <li class="nav-item dropdown">
                       <a
                         class="nav-link dropdown-toggle"
-                        href="#"
+                        href="/users"
                         id="navbarDropdown"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -43,12 +43,12 @@
                         Sign in
                       </a>
                       <ul class="dropdown-menu me-2" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="views/users/login.liquid">Sign In</a></li>
-                        <li><a class="dropdown-item" href="views/users/signup.liquid">Create an account</a></li>
-                        <li><a class="dropdown-item nav-link" href="views/vehicles/new.liquid">Create vehicle</a></li>
+                        <li><a class="dropdown-item" href="/users/login">Sign In</a></li>
+                        <li><a class="dropdown-item" href="/users/signup">Create an account</a></li>
+                        <li><a class="dropdown-item nav-link" href="/vehicles/new">Create vehicle</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li>
-                          <a class="dropdown-item" href="views/users/logout.liquid">Log Out</a>
+                          <a class="dropdown-item" href="/users/logout">Log Out</a>
                         </li>
                       </ul>
                     </li>
