@@ -21,7 +21,7 @@ middleware(app)
 //    Routes      //
 ////////////////////
 
-app.use('/auth', UserRouter)
+app.use('/user', UserRouter)
 app.use('/vehicles', VehicleRouter)
 
 app.get('/', (req, res) => {

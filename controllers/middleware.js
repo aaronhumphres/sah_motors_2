@@ -1,9 +1,9 @@
-const auth = (req, res, next) => {
+const user = (req, res, next) => {
 	if (req.session.loggedIn) {
 		next()
 	} else {
-		res.redirect('/auth/login')
+		res.redirect('/user/login')
 	}
 }
 
-module.exports = { auth }
+module.exports = { user }
