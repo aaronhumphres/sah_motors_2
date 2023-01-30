@@ -3,11 +3,14 @@ require('dotenv').config()
 // import mongoose
 const mongoose = require('mongoose')
 
-// connect to the database
-mongoose.connect(process.env.DATABASE_URL, {
-	useUnifiedTopology: true,
+const DATABASE_URL = process.env.DATABASE_URL
+const CONFIG = {
 	useNewUrlParser: true,
-})
+	useUnifiedTopology: true
+}
+
+// connect to the database
+mongoose.connect(DATABASE_URL, CONFIG)
 
 // save the connection in a variable
 const db = mongoose.connection

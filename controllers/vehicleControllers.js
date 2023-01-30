@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
     // we need to do a little js magic, to get our checkbox turned into a boolean
     // here we use a ternary operator to change the on value to send as true
     // otherwise, make that field false
-    req.body.readyToEat = req.body.readyToEat === 'on' ? true : false
+    req.body.favorite = req.body.favorite === 'on' ? true : false
     const newVehicle = req.body
     console.log('this is req.body aka newVehicle, after owner\n', newVehicle)
     Vehicle.create(newVehicle)
@@ -137,7 +137,7 @@ router.get('/edit/:id', (req, res) => {
 // Update -> updates a specific vehicle(only if the vehicle's owner is updating)
 router.put('/:id', (req, res) => {
     const id = req.params.id
-    req.body.readyToEat = req.body.readyToEat === 'on' ? true : false
+    req.body.favorite = req.body.favorite === 'on' ? true : false
     Vehicle.findById(id)
         .then(vehicle => {
             // if the owner of the vehicle is the person who is logged in

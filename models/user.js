@@ -1,11 +1,15 @@
+const mongoose = require('../utils/connection')
+
+
+
 // import what I need
-const { Schema, model } = require('../utils/connection.js')
+const { Schema, model } = mongoose
 
 //destructer the Schema and model functions from mongoose
 //const {Schema, model } = mongoose
 
 // create the schema
-const UserSchema = new Schema(
+const userSchema = new Schema(
 	{
 		username: { 
 			type: String, 
@@ -16,12 +20,11 @@ const UserSchema = new Schema(
 			type: String, 
 			required: true 
 		}
-	},
-	{ timestamps: true }
-)
+	
+	})
 
 // creat the model
-const User = model('User', UserSchema)
+const User = model('User', userSchema)
 
 // export the model
 module.exports = User

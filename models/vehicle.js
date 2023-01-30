@@ -2,17 +2,17 @@ const mongoose = require('../utils/connection')
 const commentSchema = require('./comment')
 
 // import user model for populate
-const User = require('./user')
+//const User = require('./user')
 
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
 
 const vehicleSchema = new Schema(
 	{
-		year: { type: String, required: true },
+		year: { type: Number, required: true },
 		make: { type: String, required: true },
-        model: { type: Number, required: true },
-		favorite: { type: Boolean, required: true },
+        model: { type: String, required: true },
+		favorite: { type: Boolean },
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',

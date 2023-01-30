@@ -10,7 +10,7 @@ const Vehicle = require('./vehicle')
 //// Seed Script code            ////
 /////////////////////////////////////
 // first, we'll save our db connection to a variable
-// const db = mongoose.connection
+ const db = mongoose.connection
 
 db.on('open', () => {
     // array of starter resources(vehicles)
