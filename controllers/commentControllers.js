@@ -12,10 +12,7 @@ const router = express.Router()
 //////////////////////////////
 //// Routes               ////
 //////////////////////////////
-// Subdocuments are not mongoose models. That means they don't have their own collection, and they don't come with the same model methods that we're used to(they have some their own built in.)
-// This also means, that a subdoc is never going to be viewed without it's parent document. We'll never see a comment without seeing the vehicle it was commented on first.
 
-// This also means, that when we make a subdocument, we must MUST refer to the parent so that mongoose knows where in mongodb to store this subdocument
 
 // POST -> `/comments/<someVehicleId>`
 // only loggedin users can post comments

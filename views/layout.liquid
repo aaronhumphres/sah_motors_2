@@ -6,132 +6,99 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- link in bootstrap stylesheet from the CDN-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+        <!-- Link in my CSS -->
+        <link rel="stylesheet" href="/styles.css" />
         <title>SAH Motors</title>
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <div class="container">
-                <a class="navbar-brand" href="/">SAH MOTORS</a>
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
-                  aria-controls="navbarNav"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="/" class="navbar-brand">SAH Motors</a>
+                {% if loggedIn %}
+                    <a href="/vehicles/mine" class="nav-link text-warning me-3">Hello {{username}}</a>
+                {% endif %}
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <a href="/vehicles/new" class="nav-link text-light me-3">create vehicle</a>
-                    <li class="nav-item">
-                      <a class="nav-link text-light" aria-current="page" href="/vehicles">All Vehicles</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a
-                        class="nav-link dropdown-toggle"
-                        href="/users"
-                        id="navbarDropdown"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Sign in
-                      </a>
-                      <ul class="dropdown-menu me-2" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="/users/login">Sign In</a></li>
-                        <li><a class="dropdown-item" href="/users/signup">Create an account</a></li>
-                        <li><a class="dropdown-item nav-link" href="/vehicles/new">Create vehicle</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li>
-                          <a class="dropdown-item" href="/users/logout">Log Out</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                  
-                </div>
-              </div>
-            </nav>
-          </header>
-
-          <main class="my-5">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-7">
-                  <img
-                    src="https://i.imgur.com/Vf457AA.jpg"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </div>
-                <div class="col-md-5">
-                  <h1 class="mt-5">SAH Motors</h1>
-                  <p class="mt-4">
-                    You have "practical" at home, why rent it on vacation?
-                  </p>
-                  <button type="button" class="btn btn-primary mt-3">
-                    View vehicles
-                  </button>
-                </div>
-              </div>
-              
-              <div class="row my-5">
-                <div class="col">
-                  <div class="card-group">
-                    <div class="card">
-                      <img
-                        src=""
-                        class="card-img-top"
-                        alt="girls in Jeep"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          "We had an AH-mazing time exploring Sedona in the Jeep! Thank you, Aaron and Roxanne!! - Kandyse"
-                        </p>
-      
+                    {% if loggedIn %}
                       
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img
-                        src="https://i.imgur.com/Sdz8BS6.jpg"
-                        class="card-img-top"
-                        alt="Birthday at the grand canyon"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          My wife always wanted to see the Grand Canyon. This convertible Mustang was the cherry on top!
-                        </p>
-      
-                      
-                      </div>
-                    </div>
-                    <div class="card">
-                      <img
-                        src=""
-                        class="card-img-top"
-                        alt="Having fun in the Vette!"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          The most amazing car I have ever driven!
-                        </p>
-      
+                        <a href="/vehicles/new" class="nav-link text-light me-3">New Vehicle</a>
+                        <a href="/users/logout" class="nav-link text-light me-3">Log Out</a>
+                    {% else %}
                        
-                      </div>
-                    </div>
-                  </div>
+                        <a href="/users/signup" class="nav-link text-light me-3">Sign Up</a>
+                        <a href="/users/login" class="nav-link text-light me-3">Log In</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+
+       
+
+        
+
+
+        <main class="container-md">
+            {% block content %}
+                default content
+            {% endblock %}
+        </main>
+
+
+
+        <div class="row my-5 ">
+          <div class="col">
+            <div class="card-group">
+              <div class="card">
+              
+                <img
+                  src="https://i.imgur.com/zfL4sBN.jpg"
+                  class="card-img-top"
+                  alt="girls in Jeep"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Jeep Wrangler Unlimited</h5>
+                  <p class="card-text">
+                    "We had an AH-mazing time exploring Sedona in the Jeep! Thank you, Aaron and Roxanne!!"" - Kandyse
+                  </p>
+
+                
                 </div>
               </div>
-              <div class="text-center">
+              <div class="card">
+                <img
+                  src="https://i.imgur.com/gjZgvkD.jpg"
+                  class="card-img-top"
+                  alt="Birthday at the grand canyon"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Ford Mustang</h5>
+                  <p class="card-text">
+                    "Celebrating her 50th birthday at the Grand Canyon. This convertible Mustang was the cherry on top!"" - Danny
+                  </p>
+
+                
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://i.imgur.com/2RWlkE8.jpg"
+                  class="card-img-top"
+                  alt="Perfect ride, when you have only 10 minutes to grab some doughnuts!"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Chevrolet Corvette</h5>
+                  <p class="card-text">
+                    "Perfect ride, when you have only 10 minutes to grab some donuts!" - Donut Guy!
+                  </p>
+
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- link in our bootstrap scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

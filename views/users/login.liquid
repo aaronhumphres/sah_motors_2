@@ -1,12 +1,7 @@
 {% layout 'layout.liquid' %}
 {% block content %}
     <div class="container-sm">
-        {%- comment -%}
-        in a form, we have an action and a method.
-        the action points to our url endpoint
-        the method is the HTTP verb for that endpoint
-        for example: this form will send a POST to /users/signup
-        {%- endcomment -%}
+
         <form action="/users/login" method="POST">
             <fieldset>
                 <legend>Welcome back, please log in to continue</legend>

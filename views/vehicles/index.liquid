@@ -2,19 +2,29 @@
 {% block content %}
     <!-- we need to account for two conditions here -->
     <!-- first, if we have vehicles in our array -->
-    <!-- second, if there are no vehciles in the array -->
+    <!-- second, if there are no vehicles in the array -->
     {% if vehicles.length > 0 %}
-        <div class="container-md">
+        <div class="container-lg">
             <h2>All Vehicles</h2>
             <div class="row">
                 {% for vehicle in vehicles %}
-                 
+                   
+                    <div class="card me-3 mb-3" style="width: 18rem;">
+                        <img src="{{vehicle.image}}" class="card-image-top" alt="">
+                        <h5 class="card-header">{{vehicle.year}} {{vehicle.make}} {{ vehicle.model}}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                     
+                            <a href="https://turo.com/us/en/truck-rental/united-states/phoenix-az/ford/super-duty-f-250/1140804?endDate=02%2F04%2F2023&endTime=10%3A00&startDate=02%2F01%2F2023&startTime=10%3A00" class="btn btn-info">Book Now {{vehicle.name}}</a>
+                            <a href="/vehicles/{{vehicle.id}}" class="btn btn-info">View {{vehicle.name}}</a>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     {% else %}
         <div class="container-md">
-            <h2>Currently vehicle in inventory</h2>
+            <h2>Currently no vehicles in inventory</h2>
         </div>
     {% endif %}
 {% endblock %}

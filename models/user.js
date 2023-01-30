@@ -2,11 +2,11 @@ const mongoose = require('../utils/connection')
 
 
 
-// import what I need
+
 const { Schema, model } = mongoose
 
 //destructer the Schema and model functions from mongoose
-//const {Schema, model } = mongoose
+
 
 // create the schema
 const userSchema = new Schema(

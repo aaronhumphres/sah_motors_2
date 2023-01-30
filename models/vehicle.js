@@ -12,6 +12,7 @@ const vehicleSchema = new Schema(
 		year: { type: Number, required: true },
 		make: { type: String, required: true },
         model: { type: String, required: true },
+		image: {type: String, required: false},
 		favorite: { type: Boolean },
 		owner: {
 			type: Schema.Types.ObjectID,
