@@ -1,5 +1,5 @@
 const mongoose = require('../utils/connection')
-
+const commentSchema = require('./comment')
 
 // import user model for populate
 const User = require('./user')
@@ -16,8 +16,10 @@ const vehicleSchema = new Schema(
 		owner: {
 			type: Schema.Types.ObjectID,
 			ref: 'User',
-		}
+		},
+		comments: [commentSchema]
 	},
+	
 	{ timestamps: true }
 )
 
