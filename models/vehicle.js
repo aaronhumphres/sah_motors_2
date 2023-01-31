@@ -16,6 +16,7 @@ const vehicleSchema = new Schema(
         model: { type: String, required: true },
 		image: {type: String, required: false},
 		book: {type: String, required: false},
+		keyword: {Array},
 		favorite: { type: Boolean },
 		owner: {
 			type: Schema.Types.ObjectID,
