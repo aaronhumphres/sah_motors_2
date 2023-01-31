@@ -1,3 +1,5 @@
+
+
 const mongoose = require('../utils/connection')
 const commentSchema = require('./comment')
 
@@ -13,6 +15,7 @@ const vehicleSchema = new Schema(
 		make: { type: String, required: true },
         model: { type: String, required: true },
 		image: {type: String, required: false},
+		book: {type: String, required: false},
 		favorite: { type: Boolean },
 		owner: {
 			type: Schema.Types.ObjectID,
