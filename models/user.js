@@ -1,11 +1,11 @@
+
+/////////////////////////////////////
+//// Import Dependencies         ////
+/////////////////////////////////////
+
 const mongoose = require('../utils/connection')
 
-
-
-
 const { Schema, model } = mongoose
-
-//destructer the Schema and model functions from mongoose
 
 
 // create the schema

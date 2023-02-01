@@ -1,10 +1,10 @@
 
-
+/////////////////////////////////////
+//// Import Dependencies         ////
+/////////////////////////////////////
 const mongoose = require('../utils/connection')
 const commentSchema = require('./comment')
 
-// import user model for populate
-//const User = require('./user')
 
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
@@ -31,6 +31,6 @@ const vehicleSchema = new Schema(
 const Vehicle = model('Vehicle', vehicleSchema)
 
 /////////////////////////////////
-// Export our Model
+// Export our Model            //
 /////////////////////////////////
 module.exports = Vehicle

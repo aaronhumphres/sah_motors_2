@@ -37,10 +37,30 @@ router.get('/', (req, res) => {
         })
 })
 
+// ////////////////  working keyword search
+// router.get('/', (req, res) => {
+    
+//     // find vehucle by keyword
+//     Vehicle.find({keyword: {$all : [vehicle.keyword]}})
+//         // there's a built in function that runs before the rest of the promise chain
+//         // this function is called populate, and it's able to retrieve info from other documents in other collections
+//         .populate('owner', 'username')
+//         .populate('comments.author', '-password')
+//         // send json if successful
+//         .then(vehicles => { 
+//             // res.json({ vehicles: vehicles })
+//             // now that we have liquid installed, we're going to use render as a response for our controllers
+//             res.render('vehicles/index', { vehicles, username, loggedIn, userId })
+//         })
+//         // catch errors if they occur
+//         .catch(err => {
+//             console.log(err)
+//             // res.status(404).json(err)
+//             res.redirect(`/error?error=${err}`)
+//         })
+// })
 
-
-
-
+///////////// working keyword search
 
 // GET for the new page
 // shows a form where a user can create a new vehicle

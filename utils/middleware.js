@@ -1,5 +1,5 @@
 /////////////////////////////////
-// Dependencies
+// Dependencies                //
 /////////////////////////////////
 
 const express = require('express')
@@ -10,7 +10,7 @@ require('dotenv').config()
 const methodOverride = require('method-override')
 
 /////////////////////////////////
-// Middleware function
+// Middleware function         //
 /////////////////////////////////
 const middleware = (app) => {
 	
@@ -30,6 +30,6 @@ const middleware = (app) => {
 }
 
 ///////////////////////////////////////////
-// export our Middleware function
+// export our Middleware function        //
 ///////////////////////////////////////////
 module.exports = middleware
